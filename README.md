@@ -5,6 +5,6 @@
 * Spring Tool Suite 3
 * JDK 8
 * Spring Boot 2.1.6.RELEASE
-* Activiti 7.1.0.M2
+* Activiti 6.0.0
 * H2 (in-memory) Database
 * Spring JPA
