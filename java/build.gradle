@@ -16,5 +16,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.activiti.activiti-spring-boot-starter-basic:6.0.0'
+	implementation 'org.activiti:activiti-spring-boot-starter-jpa:6.0.0'
+	implementation 'com.h2database:hs:1.4.199'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
