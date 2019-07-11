@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="Examples">
+  <process id="simple-process" name="Simple Process" isExecutable="true">
+    <startEvent id="start" name="Start"></startEvent>
+    <userTask id="userTask1" name="User Task 1" activiti:assignee="${employee.name}">
+      <documentation>Complete user task 1 first.</documentation>
+    </userTask>
+    <userTask id="userTask2" name="User Task 2" activiti:assignee="${employee.name}">
+      <documentation>Work for the second task.</documentation>
+    </userTask>
+    <endEvent id="theEnd"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="userTask2" targetRef="theEnd"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="userTask1" targetRef="userTask2"></sequenceFlow>
+    <sequenceFlow id="flow4" sourceRef="start" targetRef="userTask1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_simple-process">
+    <bpmndi:BPMNPlane bpmnElement="simple-process" id="BPMNPlane_simple-process">
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="35.0" width="35.0" x="60.0" y="103.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask1" id="BPMNShape_userTask1">
+        <omgdc:Bounds height="60.0" width="100.0" x="161.0" y="91.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask2" id="BPMNShape_userTask2">
+        <omgdc:Bounds height="60.0" width="100.0" x="310.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="theEnd" id="BPMNShape_theEnd">
+        <omgdc:Bounds height="35.0" width="35.0" x="470.0" y="102.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="410.0" y="120.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0" y="119.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="261.0" y="121.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="120.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="95.0" y="120.0"></omgdi:waypoint>
+        <omgdi:waypoint x="161.0" y="121.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

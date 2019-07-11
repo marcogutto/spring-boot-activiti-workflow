@@ -11,7 +11,7 @@ import com.example.activiti.service.EmployeeService;
 public class ActivitiApplication{
 	
 	public static void main(String[] args) {
-		SpringApplication.run(ActivitiApplication.class, args);
+		SpringApplication.run(ActivitiApplication.class, args);   
 	}
 	
 	@Bean
@@ -19,7 +19,7 @@ public class ActivitiApplication{
 
 		return new CommandLineRunner() {
 			public void run(String... strings) throws Exception {
-				
+				employeeService.createEmployee();
 			}
 		};
 	}
